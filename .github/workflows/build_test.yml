@@ -1,7 +1,7 @@
 name: Build Check
 
 on:
-  pull-request:
+  pull_request:
     branches:
       - '*'
     
@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install-build-essential
-      run: sudo apt-get update
+      run: sudo apt-get update && sudo apt-get -y build-essential
 
     - name: checkout
       uses: actions/checkout@v3
 
     - name: build
-      run: make 
+      run: make all
